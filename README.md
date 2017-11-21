@@ -49,7 +49,7 @@ For more informaton about Tensorflow installation you can find it [HERE](https:/
 ##### Other dependencies
 
 1. Numpy -> ```pip install numpy```
-2. Gzip -> ```pip install gzip```
+2. Keras -> ```pip install keras```
 
 ##### Running the program
 
@@ -59,9 +59,9 @@ With that out of the way we can go to the directory of the project
 
 Once in the project directory we will use the following commands to run the scripts
 
-First run:
+To run the python prototype script: 
 
-```python tensor.py```
+```python prototype.py```
 
 This will run the program from our Command line / terminal, otherwise we can use Jupyter Notebook
 
