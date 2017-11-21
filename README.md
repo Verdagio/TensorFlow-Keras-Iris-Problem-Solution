@@ -50,6 +50,7 @@ For more informaton about Tensorflow installation you can find it [HERE](https:/
 
 1. Numpy -> ```pip install numpy```
 2. Keras -> ```pip install keras```
+3. h5py -> ```pip install h5py```
 
 ##### Running the program
 

@@ -12,18 +12,18 @@ inputs = np.array(iris)[:,:4].astype(np.float)
 outputs = np.array(iris)[:,4]
 
 #convert the out strings to ints
-output_val, output_ints = np.unique(outputs, return_inverse=True)
+outputs_vals, outputs_inds = np.unique(outputs, return_inverse=True)
 
 # endocde the category integers as binary categorial vairables.
-output_cats = kr.utils.to_categorical(output_ints)
+outputs_cats = kr.utils.to_categorical(outputs_inds)
 
 # split the input & output data sets into training and test subsets
 inds = np.random.permutation(len(inputs))
 
 train_inds, test_inds = np.array_split(inds, 2)
 
-input_train, outputs_train = inputs[train_inds], output_cats[train_inds]
-input_test, output_test = inputs[test_inds], output_cats[test_inds]
+inputs_train, outputs_train = inputs[train_inds], outputs_cats[train_inds]
+inputs_test, outputs_test = inputs[test_inds], outputs_cats[test_inds]
 
 #creats a neral network
 model = kr.models.Sequential()
@@ -46,16 +46,18 @@ model.add(kr.layers.Activation("softmax"))
 model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 
 #fit the model using our training data
-model.fit(input_train, outputs_train, epochs=100, batch_size=1, verbose=1)
-
+model.fit(inputs_train, outputs_train, epochs=100, batch_size=1, verbose=1)
 #evaluate the model using the test data set
-loss, accuracy = model.evaluate(input_test, output_test, verbose=1)
+loss, accuracy = model.evaluate(inputs_test, outputs_test, verbose=1)
 
 
 print("\n\nloss: %6.4f\nAccuracy: %6.4f"% (loss, accuracy))
 
-prediction = np.around(model.predict(np.expand_dims(input_test[0], axis=0))).astype(np.int)[0]
-print("actual: %4.f\testimated: %s"  %(output_test[0].astype(np.int), prediction))
-print("that means it is a %s" % output_val[prediction.astype(np.bool)][0])
+# Predict the class of a single flower.
+prediction = np.around(model.predict(np.expand_dims(inputs_test[0], axis=0))).astype(np.int)[0]
+print("Actual: %s\tEstimated: %s" % (outputs_test[0].astype(np.int), prediction))
+print("That means it's a %s" % outputs_vals[prediction.astype(np.bool)][0])
 
-model.save('iris-nn.h5')
+# Save the model to a file for later use.
+model.save("iris_nn.h5")
+# Load the model again with: model = load_model("iris_nn.h5")
