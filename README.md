@@ -1,13 +1,32 @@
 # Tensorflow problem sheet solution
 
 ## Introduction
-The following is a 4th year in-class assignment for Emerging technologies. These problems relate to the Python package Tensorflow. We will again use the famous iris data set. Using Jupyter notebook to build a visual representation of the data.
+The following is a 4th year in-class assignment for Emerging technologies. These problems relate to the Python package Tensorflow & Keras. We will use the famous iris data set, & using Jupyter notebook to build a visual representation of the data.
 
 ### What is the IRIS data set?
 
 The IRIS data set consists of 50 samples from each of 3 species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres. Based on the combination of these four features, Fisher developed a linear discriminant model to distinguish the species from each other.
 
 For more info see : [IRIS](https://archive.ics.uci.edu/ml/datasets/iris)
+
+### What are Tensorflow & Keras?
+
+###### [Tensorflow](https://www.tensorflow.org/)
+
+TensorFlow™ is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them. The flexible architecture allows you to deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device with a single API.
+
+###### [Keras](https://keras.io/)
+
+Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow. It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
+
+Use Keras if you need a deep learning library that:
+
+1. Allows for easy and fast prototyping (through user friendliness, modularity, and extensibility).
+2. Supports both convolutional networks and recurrent networks, as well as combinations of the two.
+3. Runs seamlessly on CPU and GPU.
+4. Read the documentation at Keras.io.
+
+Keras is compatible with: Python 2.7-3.6.
 
 ## Getting started
 
@@ -31,7 +50,7 @@ Then install the Jupyter Notebook using:
 
 ```pip3 install jupyter```
 
-For more informaton about Jupyter Notebook you can find it [HERE](http://jupyter.org/install.html)
+For more informaton about Jupyter Notebook, you can find it [HERE](http://jupyter.org/install.html)
 
 ##### Install Tensorflow
 
@@ -43,7 +62,7 @@ To install the GPU version of TensorFlow, enter the following command:
 
 ```pip3 install --upgrade tensorflow-gpu```
 
-For more informaton about Tensorflow installation you can find it [HERE](https://www.tensorflow.org/install/install_windows)
+For more informaton about Tensorflow installation, you can find it [HERE](https://www.tensorflow.org/install/install_windows)
 
 
 ##### Other dependencies
